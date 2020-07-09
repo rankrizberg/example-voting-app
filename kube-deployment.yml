@@ -138,7 +138,7 @@ spec:
     spec:
       containers:
       - name: result
-        image: levep79/gcp-result:1
+        image: levep79/gcp-result-start
         ports:
         - containerPort: 80
           name: result
@@ -178,7 +178,7 @@ spec:
     spec:
       containers:
       - name: vote
-        image: levep79/gcp-vote:1
+        image: levep79/gcp-vote-start
         ports:
         - containerPort: 80
           name: vote
