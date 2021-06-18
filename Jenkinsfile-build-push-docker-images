@@ -1,0 +1,49 @@
+pipeline {
+  agent {
+      label 'BUILD_AGENT'
+    }
+
+  stages {
+    stage('Build result') {
+      steps {
+        sh "docker build -t rankrizberg/result:${env.BUILD_ID} ./result"
+      }
+    }
+
+    stage('Build vote') {
+      steps {
+        sh "docker build -t rankrizberg/vote:${env.BUILD_ID} ./vote"
+      }
+    }
+
+    stage('Build worker') {
+      steps {
+        sh "docker build -t rankrizberg/worker:${env.BUILD_ID} ./worker"
+      }
+    }
+
+    stage('Push result image') {
+           steps {
+        withDockerRegistry(credentialsId: 'dockerhub-rankrizberg', url:'') {
+          sh "docker push rankrizberg/result:${env.BUILD_ID}"
+        }
+      }
+    }
+
+    stage('Push vote image') {
+            steps {
+        withDockerRegistry(credentialsId: 'dockerhub-rankrizberg', url:'') {
+          sh "docker push rankrizberg/vote:${env.BUILD_ID}"
+        }
+      }
+    }
+
+    stage('Push worker image') {
+            steps {
+        withDockerRegistry(credentialsId: 'dockerhub-rankrizberg', url:'') {
+          sh "docker push rankrizberg/worker:${env.BUILD_ID}"
+        }
+      }
+    }
+  }
+}
