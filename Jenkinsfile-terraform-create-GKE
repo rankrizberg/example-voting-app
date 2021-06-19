@@ -3,6 +3,7 @@ pipeline {
     label 'BUILD_AGENT'
   }
   
+  
   environment {
     TF_WORKDIR = "${env.WORKSPACE}/learn-terraform-provision-gke-cluster" //Sets the Terraform Workspace
     TF_IN_AUTOMATION = 'true'
