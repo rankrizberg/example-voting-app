@@ -1,8 +1,8 @@
 pipeline {
   agent {
-    label 'BUILD_AGENT'
+    label 'any'
   }
-  
+
   
   environment {
     TF_WORKDIR = "${env.WORKSPACE}/learn-terraform-provision-gke-cluster" //Sets the Terraform Workspace
