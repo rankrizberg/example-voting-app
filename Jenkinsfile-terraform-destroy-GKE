@@ -10,6 +10,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
+        print("terraform -chdir=${env.TF_WORKDIR} init -input=false")
         sh "terraform -chdir=${env.TF_WORKDIR} init -input=false"
       }
     }
