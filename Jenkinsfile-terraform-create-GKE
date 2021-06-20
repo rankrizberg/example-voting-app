@@ -20,7 +20,7 @@ pipeline {
     stage('Terraform Apply') {
       steps {
         input 'Apply Plan'
-        sh "terraform -chdir=${env.TF_WORKDIR} apply -input=false tfplan"
+        sh "/usr/local/bin/terraform -chdir=${env.TF_WORKDIR} apply -input=false tfplan"
       }
     }
   }
