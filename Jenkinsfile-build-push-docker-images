@@ -25,23 +25,23 @@ pipeline {
     stage('Push result image') {
            steps {
         withDockerRegistry(credentialsId: 'dockerhub-rkrizberg', url:'') {
-          sh "docker push rkrizberg/result:${env.BUILD_ID}"
+          sh "docker push rkrizberg/rkrizberg/result:${env.BUILD_ID}"
         }
       }
     }
 
     stage('Push vote image') {
             steps {
-        withDockerRegistry(credentialsId: 'dockerhub-rankrizberg', url:'') {
-          sh "docker push rkrizberg/vote:${env.BUILD_ID}"
+        withDockerRegistry(credentialsId: 'dockerhub-rkrizberg', url:'') {
+          sh "docker push rkrizberg/rkrizberg/vote:${env.BUILD_ID}"
         }
       }
     }
 
     stage('Push worker image') {
             steps {
-        withDockerRegistry(credentialsId: 'dockerhub-rankrizberg', url:'') {
-          sh "docker push rankrizberg/worker:${env.BUILD_ID}"
+        withDockerRegistry(credentialsId: 'dockerhub-rkrizberg', url:'') {
+          sh "docker push rkrizberg/rkrizberg/worker:${env.BUILD_ID}"
         }
       }
     }
