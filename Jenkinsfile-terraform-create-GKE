@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
-        sh "ls -ltr /tmp/
+        sh "ls -ltr /tmp/"
         sh "/usr/local/bin/terraform -chdir=${env.TF_WORKDIR} init -input=false"
       }
     }
