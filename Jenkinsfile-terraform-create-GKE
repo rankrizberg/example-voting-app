@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
-        sh "env;source /etc/profile;ls -ltr /usr/local/bin/"
+        sh "ls -ltr /usr/local/bin/"
         sh "/usr/local/bin/terraform -chdir=${env.TF_WORKDIR} init -input=false"
       }
     }
