@@ -6,7 +6,7 @@ pipeline {
   
   environment {
    // TF_WORKDIR = "${env.WORKSPACE}/learn-terraform-provision-gke-cluster" //Sets the Terraform Workspace
-    env.TF_WORKDIR = "/home/vagrant/learn-terraform-provision-gke-cluster"
+      TF_WORKDIR = "/home/vagrant/learn-terraform-provision-gke-cluster"
         TF_IN_AUTOMATION = 'true'
   }
 
