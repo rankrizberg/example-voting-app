@@ -3,7 +3,7 @@ pipeline {
     label 'slave'
   }
     
-//    agent any
+  agent any
 
   environment {
   //  TF_WORKDIR = "${env.WORKSPACE}/learn-terraform-provision-gke-cluster" //Sets the Terraform Workspace
