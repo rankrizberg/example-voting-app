@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps {
-        sh "/usr/local/bin -chdir=${env.TF_WORKDIR} init -input=false"
+        sh "/usr/local/bin/ -chdir=${env.TF_WORKDIR} init -input=false"
       }
     }
     stage('Terraform Plan') {
